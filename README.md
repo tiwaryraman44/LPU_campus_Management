@@ -1,2 +1,1 @@
-# LPU_campus_Management
-First year project LPU
+first year project of LPU CSE326 
