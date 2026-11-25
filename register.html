@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -5,20 +6,19 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Register for student club memberships at Lovely Professional University. Join technical, cultural, and sports clubs with easy online registration.">
   <title>Club Membership Registration | LPU Campus Clubs</title>
-  
-  <link rel="stylesheet" href="css/style.css">
-  <link rel="icon" type="image/svg+xml" href="assets/logo.svg">
+
+  <link rel="stylesheet" href="./style.css">
+  <link rel="icon" type="image/svg+xml" href="./logo.svg">
 </head>
 <body>
 
   <!-- Site Navigation Header -->
   <header class="site-header">
     <div class="container nav-container">
-      <a href="index.html" class="brand-link" aria-label="LPU Campus Clubs Homepage">
-        <img src="assets/logo.svg" alt="LPU Campus Clubs Logo" class="brand-logo-img">
+      <a href="./index.html" class="brand-link" aria-label="LPU Campus Clubs Homepage">
+        <img src="./logo.svg" alt="LPU Campus Clubs Logo" class="brand-logo-img">
       </a>
 
-      <!-- Mobile Hamburger Button -->
       <button class="mobile-nav-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
@@ -27,21 +27,20 @@
 
       <nav>
         <ul class="nav-links">
-          <li><a href="index.html" class="nav-link">Home</a></li>
-          <li><a href="clubs.html" class="nav-link">Explore Clubs</a></li>
-          <li><a href="events.html" class="nav-link">Events</a></li>
-          <li><a href="register.html" class="nav-link nav-cta-btn active">Join a Club</a></li>
+          <li><a href="./index.html" class="nav-link">Home</a></li>
+          <li><a href="./clubs.html" class="nav-link">Explore Clubs</a></li>
+          <li><a href="./events.html" class="nav-link">Events</a></li>
+          <li><a href="./register.html" class="nav-link nav-cta-btn active">Join a Club</a></li>
         </ul>
       </nav>
     </div>
   </header>
 
   <main>
-    <!-- Page Header / Banner -->
     <section class="section-sm" style="background: linear-gradient(135deg, #ffffff 0%, #fff7ed 100%); border-bottom: 1px solid var(--color-border);">
       <div class="container">
         <div class="breadcrumb">
-          <a href="index.html">Home</a>
+          <a href="./index.html">Home</a>
           <span class="breadcrumb-separator">/</span>
           <span class="breadcrumb-current">Club Membership Registration</span>
         </div>
@@ -55,98 +54,63 @@
     <!-- Registration Form Section -->
     <section class="section">
       <div class="container">
-        
-        <!-- Registration Form Card -->
         <div class="form-card">
-          
-          <!-- Success Notification Card (Shown after valid submission) -->
+
+          <!-- Success Notification -->
           <div id="registration-success-card" class="success-card" role="alert" aria-live="polite">
             <div class="success-icon">&#10004;</div>
             <h2 style="font-size:1.6rem; color:var(--color-dark); margin-bottom:0.5rem;">Registration Successful!</h2>
             <p style="color:var(--color-text); margin-bottom:1rem;">
               Your student membership has been recorded in your local browser storage.
             </p>
-            
-            <div id="success-summary-details">
-              <!-- Summary populated by js/register.js -->
-            </div>
-
+            <div id="success-summary-details"></div>
             <button type="button" class="btn btn-primary btn-sm" id="btn-dismiss-success">
               Register Another Member
             </button>
           </div>
 
-          <!-- Pre-selected Club Banner (if coming from club-details or club card) -->
+          <!-- Pre-selected Club Banner -->
           <div id="preselected-club-note" class="disclaimer-box" style="display:none; margin-top:0; margin-bottom:1.5rem;">
             &#127881; <strong>Club Pre-selected:</strong> We've automatically filled in your chosen club based on your previous page selection.
           </div>
 
-          <!-- The Registration Form -->
+          <!-- Registration Form -->
           <form id="club-registration-form" novalidate>
-            
+
             <div class="form-grid-2">
-              <!-- Full Name -->
+
               <div class="form-group">
                 <label class="form-label" for="reg-full-name">
                   Full Name <span class="required">*</span>
                 </label>
-                <input 
-                  type="text" 
-                  id="reg-full-name" 
-                  class="form-control" 
-                  placeholder="e.g. Aman Sharma" 
-                  required
-                >
+                <input type="text" id="reg-full-name" class="form-control" placeholder="e.g. Aman Sharma" required>
                 <div class="form-error"></div>
               </div>
 
-              <!-- Student ID -->
               <div class="form-group">
                 <label class="form-label" for="reg-student-id">
                   Student Registration ID <span class="required">*</span>
                 </label>
-                <input 
-                  type="text" 
-                  id="reg-student-id" 
-                  class="form-control" 
-                  placeholder="8-digit ID (e.g. 12401234)" 
-                  required
-                >
+                <input type="text" id="reg-student-id" class="form-control" placeholder="8-digit ID (e.g. 12401234)" required>
                 <div class="form-error"></div>
               </div>
 
-              <!-- Email Address -->
               <div class="form-group">
                 <label class="form-label" for="reg-email">
                   University / Personal Email <span class="required">*</span>
                 </label>
-                <input 
-                  type="email" 
-                  id="reg-email" 
-                  class="form-control" 
-                  placeholder="student@lpu.in" 
-                  required
-                >
+                <input type="email" id="reg-email" class="form-control" placeholder="student@lpu.in" required>
                 <div class="form-error"></div>
               </div>
 
-              <!-- Phone Number -->
               <div class="form-group">
                 <label class="form-label" for="reg-phone">
                   Phone Number (10 Digits) <span class="required">*</span>
                 </label>
-                <input 
-                  type="tel" 
-                  id="reg-phone" 
-                  class="form-control" 
-                  placeholder="e.g. 9876543210" 
-                  maxlength="10" 
-                  required
-                >
+                <input type="tel" id="reg-phone" class="form-control" placeholder="e.g. 9876543210" maxlength="10" required>
                 <div class="form-error"></div>
               </div>
 
-              <!-- Course / Programme -->
               <div class="form-group">
                 <label class="form-label" for="reg-course">
                   Programme / Course <span class="required">*</span>
@@ -168,7 +132,6 @@
                 <div class="form-error"></div>
               </div>
 
-              <!-- Year of Study -->
               <div class="form-group">
                 <label class="form-label" for="reg-year">
                   Year of Study <span class="required">*</span>
@@ -184,7 +147,6 @@
                 <div class="form-error"></div>
               </div>
 
-              <!-- Preferred Club Selection -->
               <div class="form-group full-width">
                 <label class="form-label" for="reg-preferred-club">
                   Preferred Student Club <span class="required">*</span>
@@ -203,30 +165,22 @@
                 <div class="form-error"></div>
               </div>
 
-              <!-- Statement of Purpose / Reason for joining -->
               <div class="form-group full-width">
                 <label class="form-label" for="reg-reason">
                   Why do you want to join this club? <span class="required">*</span>
                 </label>
-                <textarea 
-                  id="reg-reason" 
-                  class="form-control" 
-                  rows="4" 
-                  placeholder="Share your background, interests, and what you hope to achieve or contribute as an active member (minimum 15 characters)..." 
-                  required
-                ></textarea>
+                <textarea id="reg-reason" class="form-control" rows="4" placeholder="Share your background, interests, and what you hope to achieve or contribute as an active member (minimum 15 characters)..." required></textarea>
                 <div class="form-help-text">Please provide at least 15 characters describing your motivation.</div>
                 <div class="form-error"></div>
               </div>
+
             </div>
 
-            <!-- Frontend Demo Disclaimer Box -->
             <div class="disclaimer-box">
               <strong>&#128274; Academic Project Notice:</strong>
               This application is a frontend demonstration for CSE326 Internet Programming. Registration data is saved exclusively in your browser's Local Storage. No student information is transmitted over the internet or sent to external servers.
             </div>
 
-            <!-- Submit Button -->
             <div style="margin-top: 1.5rem; display: flex; justify-content: flex-end;">
               <button type="submit" class="btn btn-primary" style="padding: 0.85rem 2.2rem; font-size: 1rem;">
                 Submit Membership Application &#8594;
@@ -236,7 +190,7 @@
 
         </div>
 
-        <!-- Saved Registrations Preview for Viva Examination -->
+        <!-- Saved Registrations Preview -->
         <section class="saved-registrations-container">
           <div class="saved-header">
             <div>
@@ -246,10 +200,7 @@
               </p>
             </div>
           </div>
-
-          <div id="saved-memberships-list">
-            <!-- Populated dynamically by js/register.js -->
-          </div>
+          <div id="saved-memberships-list"></div>
         </section>
 
       </div>
@@ -260,9 +211,10 @@
   <footer class="site-footer">
     <div class="container">
       <div class="footer-grid">
+
         <div class="footer-col">
           <div style="display:flex; align-items:center; gap:0.5rem; margin-bottom:1rem;">
-            <img src="assets/logo.svg" alt="LPU Campus Clubs Logo" style="height:36px; filter:brightness(0) invert(1);">
+            <img src="./logo.svg" alt="LPU Campus Clubs Logo" style="height:36px; filter:brightness(0) invert(1);">
           </div>
           <p>
             An interactive central directory and registration portal for student-led clubs, cultural societies, and technical workshops at Lovely Professional University.
@@ -273,21 +225,21 @@
         <div class="footer-col">
           <h4>Quick Links</h4>
           <ul class="footer-links">
-            <li><a href="index.html">Home</a></li>
-            <li><a href="clubs.html">Browse Clubs</a></li>
-            <li><a href="events.html">Campus Events</a></li>
-            <li><a href="register.html">Club Membership</a></li>
+            <li><a href="./index.html">Home</a></li>
+            <li><a href="./clubs.html">Browse Clubs</a></li>
+            <li><a href="./events.html">Campus Events</a></li>
+            <li><a href="./register.html">Club Membership</a></li>
           </ul>
         </div>
 
         <div class="footer-col">
           <h4>Club Domains</h4>
           <ul class="footer-links">
-            <li><a href="clubs.html">Coding &amp; Technology</a></li>
-            <li><a href="clubs.html">Robotics &amp; Automation</a></li>
-            <li><a href="clubs.html">Cultural &amp; Performing Arts</a></li>
-            <li><a href="clubs.html">Sports &amp; Athletics</a></li>
-            <li><a href="clubs.html">Media &amp; Photography</a></li>
+            <li><a href="./clubs.html">Coding &amp; Technology</a></li>
+            <li><a href="./clubs.html">Robotics &amp; Automation</a></li>
+            <li><a href="./clubs.html">Cultural &amp; Performing Arts</a></li>
+            <li><a href="./clubs.html">Sports &amp; Athletics</a></li>
+            <li><a href="./clubs.html">Media &amp; Photography</a></li>
           </ul>
         </div>
 
@@ -302,6 +254,7 @@
             </p>
           </div>
         </div>
+
       </div>
 
       <div class="footer-bottom">
@@ -316,8 +269,8 @@
   </footer>
 
   <!-- Scripts -->
-  <script src="js/main.js"></script>
-  <script src="js/clubs.js"></script>
-  <script src="js/register.js"></script>
+  <script src="./main.js"></script>
+  <script src="./clubs.js"></script>
+  <script src="./register.js"></script>
 </body>
 </html>
