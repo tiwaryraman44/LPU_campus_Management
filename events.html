@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Discover upcoming hackathons, cultural festivals, sports tournaments, and workshops at Lovely Professional University. Reserve your event pass online.">
+  <title>Campus Events &amp; Workshops | LPU Campus Clubs</title>
+  
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="icon" type="image/svg+xml" href="assets/logo.svg">
+</head>
+<body>
+
+  <!-- Site Navigation Header -->
+  <header class="site-header">
+    <div class="container nav-container">
+      <a href="index.html" class="brand-link" aria-label="LPU Campus Clubs Homepage">
+        <img src="assets/logo.svg" alt="LPU Campus Clubs Logo" class="brand-logo-img">
+      </a>
+
+      <!-- Mobile Hamburger Button -->
+      <button class="mobile-nav-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+        </svg>
+      </button>
+
+      <nav>
+        <ul class="nav-links">
+          <li><a href="index.html" class="nav-link">Home</a></li>
+          <li><a href="clubs.html" class="nav-link">Explore Clubs</a></li>
+          <li><a href="events.html" class="nav-link active">Events</a></li>
+          <li><a href="register.html" class="nav-link nav-cta-btn">Join a Club</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- Page Header / Banner -->
+    <section class="section-sm" style="background: linear-gradient(135deg, #ffffff 0%, #fff7ed 100%); border-bottom: 1px solid var(--color-border);">
+      <div class="container">
+        <div class="breadcrumb">
+          <a href="index.html">Home</a>
+          <span class="breadcrumb-separator">/</span>
+          <span class="breadcrumb-current">Events Calendar</span>
+        </div>
+        <h1 style="font-size:2.25rem; margin-bottom:0.5rem;">Campus Events &amp; Workshops</h1>
+        <p class="lead" style="margin-bottom:0;">
+          Participate in university-wide hackathons, competitive tournaments, acoustic concerts, and hands-on skill masterclasses.
+        </p>
+      </div>
+    </section>
+
+    <!-- Main Content & Filters Section -->
+    <section class="section">
+      <div class="container">
+        
+        <!-- Filter Toolbar -->
+        <div class="filter-toolbar">
+          <div class="filter-row-top">
+            <div class="search-input-wrap">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
+              </svg>
+              <input 
+                type="text" 
+                id="event-search-input" 
+                class="search-input" 
+                placeholder="Search events by title, organizer, venue (e.g. Hackathon, Dance, Badminton, Web)..." 
+                aria-label="Search events"
+              >
+            </div>
+          </div>
+
+          <!-- Category Filter Pills -->
+          <div class="filter-pills-wrap" role="group" aria-label="Filter events by category">
+            <button type="button" class="filter-pill active" data-category="all">All Events</button>
+            <button type="button" class="filter-pill" data-category="Technology">&#128187; Technology</button>
+            <button type="button" class="filter-pill" data-category="Cultural">&#127917; Cultural</button>
+            <button type="button" class="filter-pill" data-category="Sports">&#9917; Sports</button>
+            <button type="button" class="filter-pill" data-category="Photography">&#128247; Photography</button>
+            <button type="button" class="filter-pill" data-category="Entrepreneurship">&#128640; Entrepreneurship</button>
+            <button type="button" class="filter-pill" data-category="Workshop">&#128736; Workshops</button>
+          </div>
+
+          <!-- Status Bar -->
+          <div class="filter-status-bar">
+            <span id="event-count-display">Showing 8 of 8 events</span>
+            <button type="button" id="clear-event-filters" class="btn-clear-filter">
+              &#10005; Reset Filters
+            </button>
+          </div>
+        </div>
+
+        <!-- Dynamic Events Grid Container (Populated by js/events.js) -->
+        <div id="events-grid-container" class="card-grid" aria-live="polite">
+          <!-- Populated by JavaScript -->
+        </div>
+
+        <!-- "My Registered Events" Section for Viva Demonstration -->
+        <div class="saved-registrations-container" style="margin-top: 4rem;">
+          <div class="saved-header">
+            <div>
+              <h3 style="font-size: 1.35rem; margin-bottom: 0.25rem;">&#127915; My Registered Event Passes</h3>
+              <p style="font-size: 0.85rem; color: var(--color-muted); margin-bottom: 0;">
+                Demonstration passes saved in your browser's Local Storage. Refreshing the page preserves your data.
+              </p>
+            </div>
+          </div>
+
+          <div id="my-registered-events-list">
+            <!-- Populated dynamically by js/events.js -->
+          </div>
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <!-- Reusable Event Registration Modal Dialog -->
+  <div class="modal-backdrop" id="event-registration-modal" role="dialog" aria-modal="true" aria-labelledby="modal-event-title">
+    <div class="modal-dialog">
+      <div class="modal-header">
+        <div>
+          <span class="badge badge-tech" style="margin-bottom:0.25rem;">Event Registration</span>
+          <h3 class="modal-title" id="modal-event-title">Register for Event</h3>
+        </div>
+        <button type="button" class="modal-close-btn" id="modal-close-btn" aria-label="Close modal">&times;</button>
+      </div>
+      <form id="modal-event-form">
+        <div class="modal-body">
+          <p id="modal-event-meta" style="font-size:0.85rem; color:var(--color-muted); margin-bottom:1.25rem;"></p>
+          
+          <div class="form-group">
+            <label class="form-label" for="modal-student-name">Full Name <span class="required">*</span></label>
+            <input type="text" id="modal-student-name" class="form-control" placeholder="e.g. Aman Sharma" required>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="modal-student-id">Student Registration ID <span class="required">*</span></label>
+            <input type="text" id="modal-student-id" class="form-control" placeholder="e.g. 12401234" required>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="modal-student-email">Email Address <span class="required">*</span></label>
+            <input type="email" id="modal-student-email" class="form-control" placeholder="student@lpu.in" required>
+          </div>
+
+          <div class="disclaimer-box" style="margin: 0.75rem 0 0 0; padding: 0.75rem;">
+            <strong>Demonstration Notice:</strong> Registration is stored only in your browser's Local Storage for CSE326 coursework demonstration. No server transmission occurs.
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary btn-sm" id="modal-cancel-btn">Cancel</button>
+          <button type="submit" class="btn btn-primary btn-sm">Confirm Registration</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- Shared Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <div style="display:flex; align-items:center; gap:0.5rem; margin-bottom:1rem;">
+            <img src="assets/logo.svg" alt="LPU Campus Clubs Logo" style="height:36px; filter:brightness(0) invert(1);">
+          </div>
+          <p>
+            An interactive central directory and registration portal for student-led clubs, cultural societies, and technical workshops at Lovely Professional University.
+          </p>
+          <p class="disclaimer-tag">CSE326 Internet Programming Course Project</p>
+        </div>
+
+        <div class="footer-col">
+          <h4>Quick Links</h4>
+          <ul class="footer-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="clubs.html">Browse Clubs</a></li>
+            <li><a href="events.html">Campus Events</a></li>
+            <li><a href="register.html">Club Membership</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Club Domains</h4>
+          <ul class="footer-links">
+            <li><a href="clubs.html">Coding &amp; Technology</a></li>
+            <li><a href="clubs.html">Robotics &amp; Automation</a></li>
+            <li><a href="clubs.html">Cultural &amp; Performing Arts</a></li>
+            <li><a href="clubs.html">Sports &amp; Athletics</a></li>
+            <li><a href="clubs.html">Media &amp; Photography</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Academic Disclaimer</h4>
+          <div class="footer-badge-box">
+            <p style="font-size:0.8rem; margin-bottom:0.5rem;">
+              <strong>Student Demonstration:</strong> This web portal is built solely for educational evaluation in CSE326 Internet Programming.
+            </p>
+            <p style="font-size:0.75rem; margin-bottom:0; color:#cbd5e1;">
+              Not an official endorsement or portal of Lovely Professional University (LPU), Punjab.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>
+          &copy; 2026 LPU Campus Clubs &bull; Built with HTML5, CSS3 &amp; Vanilla JavaScript
+        </div>
+        <div>
+          Designed for First-Year B.Tech Viva Demonstration
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="js/main.js"></script>
+  <script src="js/clubs.js"></script>
+  <script src="js/events.js"></script>
+</body>
+</html>

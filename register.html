@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Register for student club memberships at Lovely Professional University. Join technical, cultural, and sports clubs with easy online registration.">
+  <title>Club Membership Registration | LPU Campus Clubs</title>
+  
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="icon" type="image/svg+xml" href="assets/logo.svg">
+</head>
+<body>
+
+  <!-- Site Navigation Header -->
+  <header class="site-header">
+    <div class="container nav-container">
+      <a href="index.html" class="brand-link" aria-label="LPU Campus Clubs Homepage">
+        <img src="assets/logo.svg" alt="LPU Campus Clubs Logo" class="brand-logo-img">
+      </a>
+
+      <!-- Mobile Hamburger Button -->
+      <button class="mobile-nav-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+        </svg>
+      </button>
+
+      <nav>
+        <ul class="nav-links">
+          <li><a href="index.html" class="nav-link">Home</a></li>
+          <li><a href="clubs.html" class="nav-link">Explore Clubs</a></li>
+          <li><a href="events.html" class="nav-link">Events</a></li>
+          <li><a href="register.html" class="nav-link nav-cta-btn active">Join a Club</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- Page Header / Banner -->
+    <section class="section-sm" style="background: linear-gradient(135deg, #ffffff 0%, #fff7ed 100%); border-bottom: 1px solid var(--color-border);">
+      <div class="container">
+        <div class="breadcrumb">
+          <a href="index.html">Home</a>
+          <span class="breadcrumb-separator">/</span>
+          <span class="breadcrumb-current">Club Membership Registration</span>
+        </div>
+        <h1 style="font-size:2.25rem; margin-bottom:0.5rem;">Join an LPU Campus Club</h1>
+        <p class="lead" style="margin-bottom:0;">
+          Complete the form below to register as an active member of your chosen student club or society.
+        </p>
+      </div>
+    </section>
+
+    <!-- Registration Form Section -->
+    <section class="section">
+      <div class="container">
+        
+        <!-- Registration Form Card -->
+        <div class="form-card">
+          
+          <!-- Success Notification Card (Shown after valid submission) -->
+          <div id="registration-success-card" class="success-card" role="alert" aria-live="polite">
+            <div class="success-icon">&#10004;</div>
+            <h2 style="font-size:1.6rem; color:var(--color-dark); margin-bottom:0.5rem;">Registration Successful!</h2>
+            <p style="color:var(--color-text); margin-bottom:1rem;">
+              Your student membership has been recorded in your local browser storage.
+            </p>
+            
+            <div id="success-summary-details">
+              <!-- Summary populated by js/register.js -->
+            </div>
+
+            <button type="button" class="btn btn-primary btn-sm" id="btn-dismiss-success">
+              Register Another Member
+            </button>
+          </div>
+
+          <!-- Pre-selected Club Banner (if coming from club-details or club card) -->
+          <div id="preselected-club-note" class="disclaimer-box" style="display:none; margin-top:0; margin-bottom:1.5rem;">
+            &#127881; <strong>Club Pre-selected:</strong> We've automatically filled in your chosen club based on your previous page selection.
+          </div>
+
+          <!-- The Registration Form -->
+          <form id="club-registration-form" novalidate>
+            
+            <div class="form-grid-2">
+              <!-- Full Name -->
+              <div class="form-group">
+                <label class="form-label" for="reg-full-name">
+                  Full Name <span class="required">*</span>
+                </label>
+                <input 
+                  type="text" 
+                  id="reg-full-name" 
+                  class="form-control" 
+                  placeholder="e.g. Aman Sharma" 
+                  required
+                >
+                <div class="form-error"></div>
+              </div>
+
+              <!-- Student ID -->
+              <div class="form-group">
+                <label class="form-label" for="reg-student-id">
+                  Student Registration ID <span class="required">*</span>
+                </label>
+                <input 
+                  type="text" 
+                  id="reg-student-id" 
+                  class="form-control" 
+                  placeholder="8-digit ID (e.g. 12401234)" 
+                  required
+                >
+                <div class="form-error"></div>
+              </div>
+
+              <!-- Email Address -->
+              <div class="form-group">
+                <label class="form-label" for="reg-email">
+                  University / Personal Email <span class="required">*</span>
+                </label>
+                <input 
+                  type="email" 
+                  id="reg-email" 
+                  class="form-control" 
+                  placeholder="student@lpu.in" 
+                  required
+                >
+                <div class="form-error"></div>
+              </div>
+
+              <!-- Phone Number -->
+              <div class="form-group">
+                <label class="form-label" for="reg-phone">
+                  Phone Number (10 Digits) <span class="required">*</span>
+                </label>
+                <input 
+                  type="tel" 
+                  id="reg-phone" 
+                  class="form-control" 
+                  placeholder="e.g. 9876543210" 
+                  maxlength="10" 
+                  required
+                >
+                <div class="form-error"></div>
+              </div>
+
+              <!-- Course / Programme -->
+              <div class="form-group">
+                <label class="form-label" for="reg-course">
+                  Programme / Course <span class="required">*</span>
+                </label>
+                <select id="reg-course" class="form-control" required>
+                  <option value="">-- Select Your Degree Programme --</option>
+                  <option value="B.Tech Computer Science & Engineering">B.Tech Computer Science &amp; Engineering (CSE)</option>
+                  <option value="B.Tech Electronics & Communication">B.Tech Electronics &amp; Communication (ECE)</option>
+                  <option value="B.Tech Mechanical Engineering">B.Tech Mechanical Engineering (ME)</option>
+                  <option value="BCA - Bachelor of Computer Applications">BCA - Bachelor of Computer Applications</option>
+                  <option value="MCA - Master of Computer Applications">MCA - Master of Computer Applications</option>
+                  <option value="B.Sc Information Technology">B.Sc Information Technology</option>
+                  <option value="BBA - Bachelor of Business Administration">BBA - Bachelor of Business Administration</option>
+                  <option value="MBA - Master of Business Administration">MBA - Master of Business Administration</option>
+                  <option value="B.Des - Bachelor of Design">B.Des - Bachelor of Design / Multimedia</option>
+                  <option value="B.A. Journalism & Mass Communication">B.A. Journalism &amp; Mass Communication</option>
+                  <option value="Other Programme">Other Academic Programme</option>
+                </select>
+                <div class="form-error"></div>
+              </div>
+
+              <!-- Year of Study -->
+              <div class="form-group">
+                <label class="form-label" for="reg-year">
+                  Year of Study <span class="required">*</span>
+                </label>
+                <select id="reg-year" class="form-control" required>
+                  <option value="">-- Select Year --</option>
+                  <option value="1">1st Year (Fresher)</option>
+                  <option value="2">2nd Year</option>
+                  <option value="3">3rd Year</option>
+                  <option value="4">4th Year</option>
+                  <option value="Postgraduate">Postgraduate</option>
+                </select>
+                <div class="form-error"></div>
+              </div>
+
+              <!-- Preferred Club Selection -->
+              <div class="form-group full-width">
+                <label class="form-label" for="reg-preferred-club">
+                  Preferred Student Club <span class="required">*</span>
+                </label>
+                <select id="reg-preferred-club" class="form-control" required>
+                  <option value="">-- Choose a Student Club --</option>
+                  <option value="coding-tech">Coding &amp; Technology Club (Technical)</option>
+                  <option value="robotics">Robotics &amp; Automation Club (Technical)</option>
+                  <option value="cultural">Virasat Cultural Heritage Club (Cultural)</option>
+                  <option value="dance">Groove &amp; Beats Dance Society (Cultural)</option>
+                  <option value="music">Symphony Music &amp; Acoustic Guild (Cultural)</option>
+                  <option value="photography">Aperture Photography &amp; Media Guild (Media)</option>
+                  <option value="sports">Apex Athletics &amp; Sports Club (Sports)</option>
+                  <option value="entrepreneurship">Ignite E-Cell &amp; Startup Hub (Entrepreneurship)</option>
+                </select>
+                <div class="form-error"></div>
+              </div>
+
+              <!-- Statement of Purpose / Reason for joining -->
+              <div class="form-group full-width">
+                <label class="form-label" for="reg-reason">
+                  Why do you want to join this club? <span class="required">*</span>
+                </label>
+                <textarea 
+                  id="reg-reason" 
+                  class="form-control" 
+                  rows="4" 
+                  placeholder="Share your background, interests, and what you hope to achieve or contribute as an active member (minimum 15 characters)..." 
+                  required
+                ></textarea>
+                <div class="form-help-text">Please provide at least 15 characters describing your motivation.</div>
+                <div class="form-error"></div>
+              </div>
+            </div>
+
+            <!-- Frontend Demo Disclaimer Box -->
+            <div class="disclaimer-box">
+              <strong>&#128274; Academic Project Notice:</strong>
+              This application is a frontend demonstration for CSE326 Internet Programming. Registration data is saved exclusively in your browser's Local Storage. No student information is transmitted over the internet or sent to external servers.
+            </div>
+
+            <!-- Submit Button -->
+            <div style="margin-top: 1.5rem; display: flex; justify-content: flex-end;">
+              <button type="submit" class="btn btn-primary" style="padding: 0.85rem 2.2rem; font-size: 1rem;">
+                Submit Membership Application &#8594;
+              </button>
+            </div>
+          </form>
+
+        </div>
+
+        <!-- Saved Registrations Preview for Viva Examination -->
+        <section class="saved-registrations-container">
+          <div class="saved-header">
+            <div>
+              <h3 style="font-size: 1.35rem; margin-bottom: 0.25rem;">&#128196; Saved Club Memberships (LocalStorage Preview)</h3>
+              <p style="font-size: 0.85rem; color: var(--color-muted); margin-bottom: 0;">
+                Demonstrates client-side data persistence. Records persist when you reload this page.
+              </p>
+            </div>
+          </div>
+
+          <div id="saved-memberships-list">
+            <!-- Populated dynamically by js/register.js -->
+          </div>
+        </section>
+
+      </div>
+    </section>
+  </main>
+
+  <!-- Shared Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <div style="display:flex; align-items:center; gap:0.5rem; margin-bottom:1rem;">
+            <img src="assets/logo.svg" alt="LPU Campus Clubs Logo" style="height:36px; filter:brightness(0) invert(1);">
+          </div>
+          <p>
+            An interactive central directory and registration portal for student-led clubs, cultural societies, and technical workshops at Lovely Professional University.
+          </p>
+          <p class="disclaimer-tag">CSE326 Internet Programming Course Project</p>
+        </div>
+
+        <div class="footer-col">
+          <h4>Quick Links</h4>
+          <ul class="footer-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="clubs.html">Browse Clubs</a></li>
+            <li><a href="events.html">Campus Events</a></li>
+            <li><a href="register.html">Club Membership</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Club Domains</h4>
+          <ul class="footer-links">
+            <li><a href="clubs.html">Coding &amp; Technology</a></li>
+            <li><a href="clubs.html">Robotics &amp; Automation</a></li>
+            <li><a href="clubs.html">Cultural &amp; Performing Arts</a></li>
+            <li><a href="clubs.html">Sports &amp; Athletics</a></li>
+            <li><a href="clubs.html">Media &amp; Photography</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Academic Disclaimer</h4>
+          <div class="footer-badge-box">
+            <p style="font-size:0.8rem; margin-bottom:0.5rem;">
+              <strong>Student Demonstration:</strong> This web portal is built solely for educational evaluation in CSE326 Internet Programming.
+            </p>
+            <p style="font-size:0.75rem; margin-bottom:0; color:#cbd5e1;">
+              Not an official endorsement or portal of Lovely Professional University (LPU), Punjab.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>
+          &copy; 2026 LPU Campus Clubs &bull; Built with HTML5, CSS3 &amp; Vanilla JavaScript
+        </div>
+        <div>
+          Designed for First-Year B.Tech Viva Demonstration
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="js/main.js"></script>
+  <script src="js/clubs.js"></script>
+  <script src="js/register.js"></script>
+</body>
+</html>

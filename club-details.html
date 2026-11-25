@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="View detailed student club information, faculty leads, activities, meeting schedules, and membership benefits at Lovely Professional University.">
+  <title>Club Details | LPU Campus Clubs</title>
+  
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="icon" type="image/svg+xml" href="assets/logo.svg">
+</head>
+<body>
+
+  <!-- Site Navigation Header -->
+  <header class="site-header">
+    <div class="container nav-container">
+      <a href="index.html" class="brand-link" aria-label="LPU Campus Clubs Homepage">
+        <img src="assets/logo.svg" alt="LPU Campus Clubs Logo" class="brand-logo-img">
+      </a>
+
+      <!-- Mobile Hamburger Button -->
+      <button class="mobile-nav-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+        </svg>
+      </button>
+
+      <nav>
+        <ul class="nav-links">
+          <li><a href="index.html" class="nav-link">Home</a></li>
+          <li><a href="clubs.html" class="nav-link active">Explore Clubs</a></li>
+          <li><a href="events.html" class="nav-link">Events</a></li>
+          <li><a href="register.html" class="nav-link nav-cta-btn">Join a Club</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <div class="container" style="padding-top: 2rem; padding-bottom: 4rem;">
+      <!-- Breadcrumb Navigation -->
+      <nav aria-label="Breadcrumb" class="breadcrumb">
+        <a href="index.html">Home</a>
+        <span class="breadcrumb-separator">/</span>
+        <a href="clubs.html">Clubs Directory</a>
+        <span class="breadcrumb-separator">/</span>
+        <span class="breadcrumb-current" id="breadcrumb-club-name">Club Details</span>
+      </nav>
+
+      <!-- Dynamic Details Container (Populated by js/clubs.js using ?id= query param) -->
+      <div id="club-details-container" aria-live="polite">
+        <!-- Loading State Placeholder -->
+        <div style="text-align: center; padding: 4rem 1rem; color: var(--color-muted);">
+          <p>Loading club profile...</p>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- Shared Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <div style="display:flex; align-items:center; gap:0.5rem; margin-bottom:1rem;">
+            <img src="assets/logo.svg" alt="LPU Campus Clubs Logo" style="height:36px; filter:brightness(0) invert(1);">
+          </div>
+          <p>
+            An interactive central directory and registration portal for student-led clubs, cultural societies, and technical workshops at Lovely Professional University.
+          </p>
+          <p class="disclaimer-tag">CSE326 Internet Programming Course Project</p>
+        </div>
+
+        <div class="footer-col">
+          <h4>Quick Links</h4>
+          <ul class="footer-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="clubs.html">Browse Clubs</a></li>
+            <li><a href="events.html">Campus Events</a></li>
+            <li><a href="register.html">Club Membership</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Club Domains</h4>
+          <ul class="footer-links">
+            <li><a href="clubs.html">Coding &amp; Technology</a></li>
+            <li><a href="clubs.html">Robotics &amp; Automation</a></li>
+            <li><a href="clubs.html">Cultural &amp; Performing Arts</a></li>
+            <li><a href="clubs.html">Sports &amp; Athletics</a></li>
+            <li><a href="clubs.html">Media &amp; Photography</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Academic Disclaimer</h4>
+          <div class="footer-badge-box">
+            <p style="font-size:0.8rem; margin-bottom:0.5rem;">
+              <strong>Student Demonstration:</strong> This web portal is built solely for educational evaluation in CSE326 Internet Programming.
+            </p>
+            <p style="font-size:0.75rem; margin-bottom:0; color:#cbd5e1;">
+              Not an official endorsement or portal of Lovely Professional University (LPU), Punjab.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>
+          &copy; 2026 LPU Campus Clubs &bull; Built with HTML5, CSS3 &amp; Vanilla JavaScript
+        </div>
+        <div>
+          Designed for First-Year B.Tech Viva Demonstration
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="js/main.js"></script>
+  <!-- Load events.js before clubs.js so club details can show related events -->
+  <script src="js/events.js"></script>
+  <script src="js/clubs.js"></script>
+</body>
+</html>

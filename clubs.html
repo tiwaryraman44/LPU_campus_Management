@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Browse and search all student clubs and societies at Lovely Professional University. Filter by technical, cultural, sports, and media domains.">
+  <title>Browse Student Clubs | LPU Campus Clubs</title>
+  
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="icon" type="image/svg+xml" href="assets/logo.svg">
+</head>
+<body>
+
+  <!-- Site Navigation Header -->
+  <header class="site-header">
+    <div class="container nav-container">
+      <a href="index.html" class="brand-link" aria-label="LPU Campus Clubs Homepage">
+        <img src="assets/logo.svg" alt="LPU Campus Clubs Logo" class="brand-logo-img">
+      </a>
+
+      <!-- Mobile Hamburger Button -->
+      <button class="mobile-nav-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+        </svg>
+      </button>
+
+      <nav>
+        <ul class="nav-links">
+          <li><a href="index.html" class="nav-link">Home</a></li>
+          <li><a href="clubs.html" class="nav-link active">Explore Clubs</a></li>
+          <li><a href="events.html" class="nav-link">Events</a></li>
+          <li><a href="register.html" class="nav-link nav-cta-btn">Join a Club</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- Page Header / Banner -->
+    <section class="section-sm" style="background: linear-gradient(135deg, #ffffff 0%, #fff7ed 100%); border-bottom: 1px solid var(--color-border);">
+      <div class="container">
+        <div class="breadcrumb">
+          <a href="index.html">Home</a>
+          <span class="breadcrumb-separator">/</span>
+          <span class="breadcrumb-current">Clubs Directory</span>
+        </div>
+        <h1 style="font-size:2.25rem; margin-bottom:0.5rem;">Student Clubs &amp; Societies</h1>
+        <p class="lead" style="margin-bottom:0;">
+          Explore university-approved student organizations. Filter by domain, search for technical and cultural activities, and find where you belong.
+        </p>
+      </div>
+    </section>
+
+    <!-- Main Content & Filters Section -->
+    <section class="section">
+      <div class="container">
+        
+        <!-- Filter and Search Toolbar -->
+        <div class="filter-toolbar">
+          <!-- Search Row -->
+          <div class="filter-row-top">
+            <div class="search-input-wrap">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
+              </svg>
+              <input 
+                type="text" 
+                id="club-search-input" 
+                class="search-input" 
+                placeholder="Search clubs by name, activity, keyword (e.g., Coding, Dance, Robotics, Sports)..." 
+                aria-label="Search clubs"
+              >
+            </div>
+          </div>
+
+          <!-- Category Filter Pills -->
+          <div class="filter-pills-wrap" role="group" aria-label="Filter clubs by domain">
+            <button type="button" class="filter-pill active" data-category="all">All Domains</button>
+            <button type="button" class="filter-pill" data-category="Technical">&#128187; Technical</button>
+            <button type="button" class="filter-pill" data-category="Cultural">&#127917; Cultural</button>
+            <button type="button" class="filter-pill" data-category="Sports">&#9917; Sports</button>
+            <button type="button" class="filter-pill" data-category="Media">&#128247; Media &amp; Film</button>
+            <button type="button" class="filter-pill" data-category="Entrepreneurship">&#128640; Entrepreneurship</button>
+          </div>
+
+          <!-- Status Bar with Result Count and Reset Button -->
+          <div class="filter-status-bar">
+            <span id="club-count-display">Showing 8 of 8 clubs</span>
+            <button type="button" id="clear-club-filters" class="btn-clear-filter">
+              &#10005; Reset Filters
+            </button>
+          </div>
+        </div>
+
+        <!-- Dynamic Clubs Cards Grid (Populated by js/clubs.js) -->
+        <div id="clubs-grid-container" class="card-grid" aria-live="polite">
+          <!-- Populated by JavaScript -->
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Information Banner -->
+    <section class="section-sm" style="background-color: #ffffff; border-top:1px solid var(--color-border);">
+      <div class="container">
+        <div style="background-color: var(--color-primary-subtle); border: 1px solid var(--color-primary-light); border-radius: var(--radius-md); padding: 1.5rem; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1rem;">
+          <div>
+            <h3 style="font-size: 1.15rem; margin-bottom: 0.25rem;">Want to register for an official club membership?</h3>
+            <p style="font-size: 0.9rem; color: var(--color-muted); margin-bottom: 0;">
+              All registered LPU students can join up to 2 active student societies per academic session.
+            </p>
+          </div>
+          <a href="register.html" class="btn btn-primary btn-sm">Join a Club Now &#8594;</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Shared Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <div style="display:flex; align-items:center; gap:0.5rem; margin-bottom:1rem;">
+            <img src="assets/logo.svg" alt="LPU Campus Clubs Logo" style="height:36px; filter:brightness(0) invert(1);">
+          </div>
+          <p>
+            An interactive central directory and registration portal for student-led clubs, cultural societies, and technical workshops at Lovely Professional University.
+          </p>
+          <p class="disclaimer-tag">CSE326 Internet Programming Course Project</p>
+        </div>
+
+        <div class="footer-col">
+          <h4>Quick Links</h4>
+          <ul class="footer-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="clubs.html">Browse Clubs</a></li>
+            <li><a href="events.html">Campus Events</a></li>
+            <li><a href="register.html">Club Membership</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Club Domains</h4>
+          <ul class="footer-links">
+            <li><a href="clubs.html">Coding &amp; Technology</a></li>
+            <li><a href="clubs.html">Robotics &amp; Automation</a></li>
+            <li><a href="clubs.html">Cultural &amp; Performing Arts</a></li>
+            <li><a href="clubs.html">Sports &amp; Athletics</a></li>
+            <li><a href="clubs.html">Media &amp; Photography</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Academic Disclaimer</h4>
+          <div class="footer-badge-box">
+            <p style="font-size:0.8rem; margin-bottom:0.5rem;">
+              <strong>Student Demonstration:</strong> This web portal is built solely for educational evaluation in CSE326 Internet Programming.
+            </p>
+            <p style="font-size:0.75rem; margin-bottom:0; color:#cbd5e1;">
+              Not an official endorsement or portal of Lovely Professional University (LPU), Punjab.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>
+          &copy; 2026 LPU Campus Clubs &bull; Built with HTML5, CSS3 &amp; Vanilla JavaScript
+        </div>
+        <div>
+          Designed for First-Year B.Tech Viva Demonstration
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="js/main.js"></script>
+  <script src="js/clubs.js"></script>
+  <script src="js/events.js"></script>
+</body>
+</html>
