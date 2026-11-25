@@ -1,33 +1,50 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
   <meta name="description" content="LPU Campus Clubs - Explore student organizations, campus events, workshops, and join active university clubs at Lovely Professional University.">
+
   <title>LPU Campus Clubs | Discover Your Community</title>
-  
-  <!-- Main Stylesheet -->
-  <link rel="stylesheet" href="css/style.css">
-  <link rel="icon" type="image/svg+xml" href="assets/logo.svg">
+
+  <!-- Correct CSS Path -->
+  <link rel="stylesheet" href="style.css">
+
+  <!-- Correct Logo Path -->
+  <link rel="icon" type="image/svg+xml" href="logo.svg">
+
+  <!-- JavaScript Files -->
+  <script src="main.js" defer></script>
+  <script src="clubs.js" defer></script>
+  <script src="events.js" defer></script>
 </head>
+
 <body>
 
-  <!-- Site Navigation Header -->
+  <!-- HEADER -->
   <header class="site-header">
     <div class="container nav-container">
-      <!-- Logo Branding -->
+
       <a href="index.html" class="brand-link" aria-label="LPU Campus Clubs Homepage">
-        <img src="assets/logo.svg" alt="LPU Campus Clubs Logo" class="brand-logo-img">
+        <img src="logo.svg" alt="LPU Campus Clubs Logo" class="brand-logo-img">
       </a>
 
-      <!-- Mobile Hamburger Button -->
-      <button class="mobile-nav-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
-        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+      <button class="mobile-nav-toggle"
+        aria-label="Toggle navigation menu"
+        aria-expanded="false">
+
+        <svg xmlns="http://www.w3.org/2000/svg"
+          fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M4 6h16M4 12h16M4 18h16"/>
         </svg>
+
       </button>
 
-      <!-- Navigation Links -->
       <nav>
         <ul class="nav-links">
           <li><a href="index.html" class="nav-link active">Home</a></li>
@@ -36,276 +53,493 @@
           <li><a href="register.html" class="nav-link nav-cta-btn">Join a Club</a></li>
         </ul>
       </nav>
+
     </div>
   </header>
 
+
   <main>
-    <!-- Hero Section -->
+
+    <!-- HERO SECTION -->
     <section class="hero">
       <div class="container">
         <div class="hero-grid">
-          <!-- Hero Text -->
+
           <div>
+
             <div class="hero-pill">
-              <span>&#127881;</span> Campus Life &bull; Academic Year 2026-27
+              <span>&#127881;</span>
+              Campus Life &bull; Academic Year 2026-27
             </div>
+
             <h1 class="hero-title">
-              Discover Your Community. <br>
+              Discover Your Community.
+              <br>
               <span class="highlight">Explore Your Passion.</span>
             </h1>
+
             <p class="hero-desc">
-              Connect with fellow students, develop real-world engineering and creative skills, and participate in vibrant campus events across technical, cultural, sports, and entrepreneurial societies at LPU.
+              Connect with fellow students, develop real-world engineering
+              and creative skills, and participate in vibrant campus events
+              across technical, cultural, sports, and entrepreneurial
+              societies at LPU.
             </p>
+
             <div class="hero-buttons">
+
               <a href="clubs.html" class="btn btn-primary">
                 Explore Clubs &#8594;
               </a>
+
               <a href="events.html" class="btn btn-secondary">
                 Discover Events
               </a>
+
             </div>
+
             <div class="hero-badges-strip">
+
               <div class="hero-badge-item">
-                <span style="color:var(--color-success);">&#10004;</span> 8+ Active Campus Clubs
+                <span style="color:var(--color-success);">&#10004;</span>
+                8+ Active Campus Clubs
               </div>
+
               <div class="hero-badge-item">
-                <span style="color:var(--color-primary);">&#10004;</span> Verified Student Leads
+                <span style="color:var(--color-primary);">&#10004;</span>
+                Verified Student Leads
               </div>
+
               <div class="hero-badge-item">
-                <span style="color:var(--color-info);">&#10004;</span> Free Student Membership
+                <span style="color:var(--color-info);">&#10004;</span>
+                Free Student Membership
               </div>
+
             </div>
+
           </div>
 
-          <!-- Hero Visual Showcase -->
+
+          <!-- HERO GRAPHIC -->
           <div class="hero-graphic">
+
             <div class="hero-card-showcase">
+
               <div class="hero-card-header">
+
                 <div class="hero-card-icon">&#128187;</div>
+
                 <div>
                   <span class="badge badge-tech">Featured Society</span>
-                  <h3 style="font-size:1.15rem; margin-top:0.25rem; margin-bottom:0;">Coding &amp; Tech Club</h3>
+
+                  <h3 style="font-size:1.15rem;margin-top:0.25rem;margin-bottom:0;">
+                    Coding &amp; Tech Club
+                  </h3>
                 </div>
+
               </div>
-              <p style="font-size:0.9rem; color:var(--color-muted); margin-bottom:1rem;">
-                Host of the annual HackLPU hackathon and weekly competitive programming labs in Block 34.
+
+              <p style="font-size:0.9rem;color:var(--color-muted);margin-bottom:1rem;">
+                Host of the annual HackLPU hackathon and weekly
+                competitive programming labs in Block 34.
               </p>
-              <div style="display:flex; justify-content:space-between; align-items:center; font-size:0.85rem; color:var(--color-text); padding-top:0.75rem; border-top:1px solid var(--color-border);">
+
+              <div style="display:flex;justify-content:space-between;align-items:center;font-size:0.85rem;color:var(--color-text);padding-top:0.75rem;border-top:1px solid var(--color-border);">
+
                 <span>&#128101; 420+ Members</span>
-                <span style="color:var(--color-primary); font-weight:600;">Next: Wed 4:30 PM</span>
+
+                <span style="color:var(--color-primary);font-weight:600;">
+                  Next: Wed 4:30 PM
+                </span>
+
               </div>
+
             </div>
 
-            <!-- Floating Mini Badge -->
             <div class="floating-stat-card">
+
               <div class="floating-stat-icon">&#10003;</div>
+
               <div>
-                <strong style="font-size:0.85rem; color:var(--color-dark); display:block;">Active Workshops</strong>
-                <span style="font-size:0.75rem; color:var(--color-muted);">Join anytime this semester</span>
+                <strong style="font-size:0.85rem;color:var(--color-dark);display:block;">
+                  Active Workshops
+                </strong>
+
+                <span style="font-size:0.75rem;color:var(--color-muted);">
+                  Join anytime this semester
+                </span>
               </div>
+
             </div>
+
           </div>
+
         </div>
       </div>
     </section>
 
-    <!-- Statistics Section -->
+
+    <!-- STATISTICS -->
     <section class="stats-section">
+
       <div class="container">
+
         <div class="stats-grid">
+
           <div class="stat-box">
             <div class="stat-number">8+</div>
             <div class="stat-label">Recognized Clubs</div>
             <div class="stat-sub">Tech, Culture, Media &amp; Sports</div>
           </div>
+
           <div class="stat-box">
             <div class="stat-number">25+</div>
             <div class="stat-label">Annual Events</div>
             <div class="stat-sub">Hackathons, Fests &amp; Jams</div>
           </div>
+
           <div class="stat-box">
             <div class="stat-number">2,500+</div>
             <div class="stat-label">Active Members</div>
             <div class="stat-sub">Students across all schools</div>
           </div>
+
           <div class="stat-box">
             <div class="stat-number">100%</div>
             <div class="stat-label">Free Access</div>
             <div class="stat-sub">Open to all LPU students</div>
           </div>
+
         </div>
-        <p style="text-align:center; font-size:0.75rem; color:var(--color-muted); margin-top:1.25rem; margin-bottom:0;">
+
+        <p style="text-align:center;font-size:0.75rem;color:var(--color-muted);margin-top:1.25rem;margin-bottom:0;">
           * Note: Statistics are illustrative demonstration values for academic coursework.
         </p>
+
       </div>
+
     </section>
 
-    <!-- Featured Clubs Section -->
+
+    <!-- FEATURED CLUBS -->
     <section class="section">
+
       <div class="container">
+
         <div class="section-header">
           <h2>Featured Campus Clubs</h2>
-          <p>Explore some of the most dynamic student societies currently hosting workshops and recruitments across campus.</p>
+
+          <p>
+            Explore some of the most dynamic student societies currently
+            hosting workshops and recruitments across campus.
+          </p>
         </div>
 
-        <!-- Populated dynamically by js/clubs.js -->
         <div id="featured-clubs-container" class="card-grid"></div>
 
-        <div style="text-align:center; margin-top:2.5rem;">
+        <div style="text-align:center;margin-top:2.5rem;">
+
           <a href="clubs.html" class="btn btn-outline">
             Browse All 8 Campus Clubs &#8594;
           </a>
+
         </div>
+
       </div>
+
     </section>
 
-    <!-- Upcoming Events Section -->
-    <section class="section" style="background-color: #ffffff; border-top:1px solid var(--color-border); border-bottom:1px solid var(--color-border);">
+
+    <!-- UPCOMING EVENTS -->
+    <section class="section"
+      style="background-color:#ffffff;border-top:1px solid var(--color-border);border-bottom:1px solid var(--color-border);">
+
       <div class="container">
+
         <div class="section-header">
           <h2>Upcoming Events &amp; Workshops</h2>
-          <p>Register online to reserve your slot in student-led hackathons, open mic nights, photowalks, and skill bootcamps.</p>
+
+          <p>
+            Register online to reserve your slot in student-led hackathons,
+            open mic nights, photowalks, and skill bootcamps.
+          </p>
         </div>
 
-        <!-- Populated dynamically by js/events.js -->
         <div id="upcoming-events-container" class="card-grid"></div>
 
-        <div style="text-align:center; margin-top:2.5rem;">
+        <div style="text-align:center;margin-top:2.5rem;">
+
           <a href="events.html" class="btn btn-primary">
             View Full Events Calendar &#8594;
           </a>
+
         </div>
+
       </div>
+
     </section>
 
-    <!-- Why Join Campus Clubs Section -->
+
+    <!-- WHY JOIN CLUBS -->
     <section class="section">
+
       <div class="container">
+
         <div class="section-header">
           <h2>Why Get Involved?</h2>
-          <p>Joining a student club is one of the best ways to enhance your university journey beyond the classroom.</p>
+
+          <p>
+            Joining a student club is one of the best ways to enhance
+            your university journey beyond the classroom.
+          </p>
         </div>
 
-        <div class="card-grid" style="grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));">
-          <div class="stat-box" style="text-align:left; padding:1.75rem;">
-            <div style="font-size:2rem; color:var(--color-primary); margin-bottom:0.75rem;">&#128736;</div>
-            <h3 style="font-size:1.15rem; margin-bottom:0.5rem;">Practical Skills</h3>
-            <p style="font-size:0.9rem; color:var(--color-muted); margin-bottom:0;">
-              Apply theoretical coursework to build tangible web applications, autonomous robots, design portfolios, and stage productions.
+        <div class="card-grid"
+          style="grid-template-columns:repeat(auto-fit,minmax(260px,1fr));">
+
+          <div class="stat-box" style="text-align:left;padding:1.75rem;">
+            <div style="font-size:2rem;color:var(--color-primary);margin-bottom:0.75rem;">&#128736;</div>
+
+            <h3 style="font-size:1.15rem;margin-bottom:0.5rem;">
+              Practical Skills
+            </h3>
+
+            <p style="font-size:0.9rem;color:var(--color-muted);margin-bottom:0;">
+              Apply theoretical coursework to build tangible web applications,
+              autonomous robots, design portfolios, and stage productions.
             </p>
           </div>
 
-          <div class="stat-box" style="text-align:left; padding:1.75rem;">
-            <div style="font-size:2rem; color:var(--color-primary); margin-bottom:0.75rem;">&#129309;</div>
-            <h3 style="font-size:1.15rem; margin-bottom:0.5rem;">Peer Networking</h3>
-            <p style="font-size:0.9rem; color:var(--color-muted); margin-bottom:0;">
-              Form lasting friendships with motivated seniors and peers across Computer Science, Electronics, Management, and Arts.
+
+          <div class="stat-box" style="text-align:left;padding:1.75rem;">
+            <div style="font-size:2rem;color:var(--color-primary);margin-bottom:0.75rem;">&#129309;</div>
+
+            <h3 style="font-size:1.15rem;margin-bottom:0.5rem;">
+              Peer Networking
+            </h3>
+
+            <p style="font-size:0.9rem;color:var(--color-muted);margin-bottom:0;">
+              Form lasting friendships with motivated seniors and peers
+              across Computer Science, Electronics, Management, and Arts.
             </p>
           </div>
 
-          <div class="stat-box" style="text-align:left; padding:1.75rem;">
-            <div style="font-size:2rem; color:var(--color-primary); margin-bottom:0.75rem;">&#127942;</div>
-            <h3 style="font-size:1.15rem; margin-bottom:0.5rem;">Leadership Experience</h3>
-            <p style="font-size:0.9rem; color:var(--color-muted); margin-bottom:0;">
-              Organize campus festivals, lead technical teams, manage budgets, and gain confidence for upcoming job interviews.
+
+          <div class="stat-box" style="text-align:left;padding:1.75rem;">
+            <div style="font-size:2rem;color:var(--color-primary);margin-bottom:0.75rem;">&#127942;</div>
+
+            <h3 style="font-size:1.15rem;margin-bottom:0.5rem;">
+              Leadership Experience
+            </h3>
+
+            <p style="font-size:0.9rem;color:var(--color-muted);margin-bottom:0;">
+              Organize campus festivals, lead technical teams,
+              manage budgets, and gain confidence for upcoming job interviews.
             </p>
           </div>
 
-          <div class="stat-box" style="text-align:left; padding:1.75rem;">
-            <div style="font-size:2rem; color:var(--color-primary); margin-bottom:0.75rem;">&#128220;</div>
-            <h3 style="font-size:1.15rem; margin-bottom:0.5rem;">Verified Certificates</h3>
-            <p style="font-size:0.9rem; color:var(--color-muted); margin-bottom:0;">
-              Earn participation certificates and letters of recommendation recognized for academic credits and resume building.
+
+          <div class="stat-box" style="text-align:left;padding:1.75rem;">
+            <div style="font-size:2rem;color:var(--color-primary);margin-bottom:0.75rem;">&#128220;</div>
+
+            <h3 style="font-size:1.15rem;margin-bottom:0.5rem;">
+              Verified Certificates
+            </h3>
+
+            <p style="font-size:0.9rem;color:var(--color-muted);margin-bottom:0;">
+              Earn participation certificates and letters of recommendation
+              recognized for academic credits and resume building.
             </p>
           </div>
+
         </div>
+
       </div>
+
     </section>
 
-    <!-- Call to Action Banner -->
-    <section class="section-sm" style="background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-hover) 100%); color:#ffffff;">
+
+    <!-- CALL TO ACTION -->
+    <section class="section-sm"
+      style="background:linear-gradient(135deg,var(--color-primary) 0%,var(--color-primary-hover) 100%);color:#ffffff;">
+
       <div class="container" style="text-align:center;">
-        <h2 style="color:#ffffff; margin-bottom:0.75rem;">Ready to Find Your Community?</h2>
-        <p style="color:var(--color-primary-light); max-width:600px; margin:0 auto 1.75rem auto; font-size:1.05rem;">
-          Take the first step toward enriching your campus experience. Membership is free for all enrolled LPU students.
+
+        <h2 style="color:#ffffff;margin-bottom:0.75rem;">
+          Ready to Find Your Community?
+        </h2>
+
+        <p style="color:var(--color-primary-light);max-width:600px;margin:0 auto 1.75rem auto;font-size:1.05rem;">
+          Take the first step toward enriching your campus experience.
+          Membership is free for all enrolled LPU students.
         </p>
-        <a href="register.html" class="btn btn-secondary" style="font-weight:700; color:var(--color-primary-hover);">
+
+        <a href="register.html" class="btn btn-secondary"
+          style="font-weight:700;color:var(--color-primary-hover);">
           Join a Club Today &#8594;
         </a>
+
       </div>
+
     </section>
+
   </main>
 
-  <!-- Reusable Event Registration Modal Dialog -->
-  <div class="modal-backdrop" id="event-registration-modal" role="dialog" aria-modal="true" aria-labelledby="modal-event-title">
+
+  <!-- EVENT REGISTRATION MODAL -->
+  <div class="modal-backdrop"
+    id="event-registration-modal"
+    role="dialog"
+    aria-modal="true"
+    aria-labelledby="modal-event-title">
+
     <div class="modal-dialog">
+
       <div class="modal-header">
+
         <div>
-          <span class="badge badge-tech" style="margin-bottom:0.25rem;">Event Registration</span>
-          <h3 class="modal-title" id="modal-event-title">Register for Event</h3>
+          <span class="badge badge-tech" style="margin-bottom:0.25rem;">
+            Event Registration
+          </span>
+
+          <h3 class="modal-title" id="modal-event-title">
+            Register for Event
+          </h3>
         </div>
-        <button type="button" class="modal-close-btn" id="modal-close-btn" aria-label="Close modal">&times;</button>
+
+        <button type="button"
+          class="modal-close-btn"
+          id="modal-close-btn"
+          aria-label="Close modal">
+          &times;
+        </button>
+
       </div>
+
+
       <form id="modal-event-form">
+
         <div class="modal-body">
-          <p id="modal-event-meta" style="font-size:0.85rem; color:var(--color-muted); margin-bottom:1rem;"></p>
-          
-          <div class="form-group">
-            <label class="form-label" for="modal-student-name">Full Name <span class="required">*</span></label>
-            <input type="text" id="modal-student-name" class="form-control" placeholder="e.g. Aman Sharma" required>
-          </div>
+
+          <p id="modal-event-meta"
+            style="font-size:0.85rem;color:var(--color-muted);margin-bottom:1rem;">
+          </p>
 
           <div class="form-group">
-            <label class="form-label" for="modal-student-id">Student Registration ID <span class="required">*</span></label>
-            <input type="text" id="modal-student-id" class="form-control" placeholder="e.g. 12401234" required>
+            <label class="form-label" for="modal-student-name">
+              Full Name <span class="required">*</span>
+            </label>
+
+            <input type="text"
+              id="modal-student-name"
+              class="form-control"
+              placeholder="e.g. Aman Sharma"
+              required>
           </div>
+
 
           <div class="form-group">
-            <label class="form-label" for="modal-student-email">Email Address <span class="required">*</span></label>
-            <input type="email" id="modal-student-email" class="form-control" placeholder="student@lpu.in" required>
+            <label class="form-label" for="modal-student-id">
+              Student Registration ID <span class="required">*</span>
+            </label>
+
+            <input type="text"
+              id="modal-student-id"
+              class="form-control"
+              placeholder="e.g. 12401234"
+              required>
           </div>
 
-          <p style="font-size:0.78rem; color:var(--color-muted); margin-bottom:0;">
+
+          <div class="form-group">
+            <label class="form-label" for="modal-student-email">
+              Email Address <span class="required">*</span>
+            </label>
+
+            <input type="email"
+              id="modal-student-email"
+              class="form-control"
+              placeholder="student@lpu.in"
+              required>
+          </div>
+
+
+          <p style="font-size:0.78rem;color:var(--color-muted);margin-bottom:0;">
             &#128274; Demonstration pass saved securely in your browser's Local Storage.
           </p>
+
         </div>
+
+
         <div class="modal-footer">
-          <button type="button" class="btn btn-secondary btn-sm" id="modal-cancel-btn">Cancel</button>
-          <button type="submit" class="btn btn-primary btn-sm">Confirm Registration</button>
+
+          <button type="button"
+            class="btn btn-secondary btn-sm"
+            id="modal-cancel-btn">
+            Cancel
+          </button>
+
+          <button type="submit"
+            class="btn btn-primary btn-sm">
+            Confirm Registration
+          </button>
+
         </div>
+
       </form>
+
     </div>
+
   </div>
 
-  <!-- Shared Site Footer -->
+
+  <!-- FOOTER -->
   <footer class="site-footer">
+
     <div class="container">
+
       <div class="footer-grid">
-        <!-- Col 1: About -->
+
         <div class="footer-col">
-          <div style="display:flex; align-items:center; gap:0.5rem; margin-bottom:1rem;">
-            <img src="assets/logo.svg" alt="LPU Campus Clubs Logo" style="height:36px; filter:brightness(0) invert(1);">
+
+          <div style="display:flex;align-items:center;gap:0.5rem;margin-bottom:1rem;">
+
+            <img src="logo.svg"
+              alt="LPU Campus Clubs Logo"
+              style="height:36px;filter:brightness(0) invert(1);">
+
           </div>
+
           <p>
-            An interactive central directory and registration portal for student-led clubs, cultural societies, and technical workshops at Lovely Professional University.
+            An interactive central directory and registration portal
+            for student-led clubs, cultural societies, and technical
+            workshops at Lovely Professional University.
           </p>
-          <p class="disclaimer-tag">CSE326 Internet Programming Course Project</p>
+
+          <p class="disclaimer-tag">
+            CSE326 Internet Programming Course Project
+          </p>
+
         </div>
 
-        <!-- Col 2: Navigation -->
+
         <div class="footer-col">
+
           <h4>Quick Links</h4>
+
           <ul class="footer-links">
             <li><a href="index.html">Home</a></li>
             <li><a href="clubs.html">Browse Clubs</a></li>
             <li><a href="events.html">Campus Events</a></li>
             <li><a href="register.html">Club Membership</a></li>
           </ul>
+
         </div>
 
-        <!-- Col 3: Popular Categories -->
+
         <div class="footer-col">
+
           <h4>Club Domains</h4>
+
           <ul class="footer-links">
             <li><a href="clubs.html">Coding &amp; Technology</a></li>
             <li><a href="clubs.html">Robotics &amp; Automation</a></li>
@@ -313,36 +547,47 @@
             <li><a href="clubs.html">Sports &amp; Athletics</a></li>
             <li><a href="clubs.html">Media &amp; Photography</a></li>
           </ul>
+
         </div>
 
-        <!-- Col 4: Project Disclaimer -->
+
         <div class="footer-col">
+
           <h4>Academic Disclaimer</h4>
+
           <div class="footer-badge-box">
-            <p style="font-size:0.8rem; margin-bottom:0.5rem;">
+
+            <p style="font-size:0.8rem;margin-bottom:0.5rem;">
               <strong>Student Demonstration:</strong>
             </p>
-            <p style="font-size:0.75rem; margin-bottom:0; color:#cbd5e1;">
-              Not an official endorsement or portal of Lovely Professional University (LPU), Punjab.
+
+            <p style="font-size:0.75rem;margin-bottom:0;color:#cbd5e1;">
+              Not an official endorsement or portal of Lovely
+              Professional University (LPU), Punjab.
             </p>
+
           </div>
+
         </div>
+
       </div>
 
+
       <div class="footer-bottom">
+
         <div>
           &copy; 2026 LPU Campus Clubs
         </div>
+
         <div>
           Designed by Tag Titans
         </div>
+
       </div>
+
     </div>
+
   </footer>
 
-  <!-- Scripts -->
-  <script src="js/main.js"></script>
-  <script src="js/clubs.js"></script>
-  <script src="js/events.js"></script>
 </body>
 </html>
